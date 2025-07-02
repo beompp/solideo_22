@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중소벤처기업부 공지사항 뷰어</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-3xl mx-auto py-8 px-4">
+    <h1 class="text-2xl font-bold mb-6 text-center">중소벤처기업부 공지사항 뷰어</h1>
+    <form id="periodForm" class="flex flex-wrap gap-2 items-center justify-center mb-4">
+      <label class="font-semibold">조회 기간:</label>
+      <button type="button" class="period-btn px-3 py-1 rounded bg-blue-100 text-blue-700" data-days="1">1일</button>
+      <button type="button" class="period-btn px-3 py-1 rounded bg-blue-100 text-blue-700" data-days="7">7일</button>
+      <button type="button" class="period-btn px-3 py-1 rounded bg-blue-100 text-blue-700" data-days="30">1달</button>
+      <input type="date" id="startDate" class="border rounded px-2 py-1" required>
+      <span>~</span>
+      <input type="date" id="endDate" class="border rounded px-2 py-1" required>
+      <button type="submit" class="ml-2 px-4 py-1 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700">조회</button>
+    </form>
+    <div id="loading" class="hidden text-center py-4 text-blue-600 font-semibold">조회 중입니다...</div>
+    <div id="error" class="hidden text-center py-4 text-red-600 font-semibold"></div>
+    <div id="result"></div>
+  </div>
+  <script type="application/json" id="notices-data">
+[
+  {
+    "title": "온누리상품권 가맹 말소 예고",
+    "date": "2025.06.27",
+    "content": "중소벤처기업부 공고 제2025-390호<br /> <br /> 온누리상품권 가맹 말소 예고<br /> <br /> 전통시장 및 상점가 육성을 위한 특별법 제26조의6(가맹점 등록의 추소 등) 제4항제3호 및 동법 시행령 제9조의20(가맹점의 등록 말소)에 따라 붙임과 같이 온누리상품권 가맹점의 등록 말소 예정 사실(말소 예정일: 2025.7.31)을 공고합니다.<br /> <br /> 2025.06.27.<br /> 중소벤처기업부장관<br /> <br /> 붙임 : 온누리상품권 가맹등록 말소 가맹점 목록 1부. 끝."
+  },
+  {
+    "title": "2025 공공구매 유공자 포상계획 공고(연장)",
+    "date": "2025.06.23",
+    "content": "중소벤처기업부 공고 제2025-382호<br /> <br /> 「중소기업제품 구매촉진 및 판로지원에 관한 법률」제21조제6항에 따른<br /> 2025년도 공공구매 유공자 포상계획을 다음과 같이 공고하오니 많은 참여와 추천 바랍니다.<br /> <br /> 2025년 6월 23일<br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "독점규제 및 공정거래에 관한 법률 등의 위반행위에 대한 고발요청에 관한 운영 규정 개정",
+    "date": "2025.06.23",
+    "content": "독점규제 및 공정거래에 관한 법률 등의 위반행위에 대한 고발요청에 관한 운영 규정('25.6.16. 개정)을 게시합니다."
+  },
+  {
+    "title": "자율기구 미래기술대응지원단 업무성과 및 향후 계획",
+    "date": "2025.06.20",
+    "content": "2025년 정부조직관리지침에 따라 자율기구 미래기술대응지원단 운영성과 및 향후계획을 첨부와 같이 공개합니다."
+  },
+  {
+    "title": "2025 중소기업 국내외 판로개척 및 마케팅 유공자 포상 후보자 모집 공고",
+    "date": "2025.06.18",
+    "content": "<br /> 중소벤처기업부 공고 제2025–375호<br /> <br /> <br /> <br /> ‘2025년도 중소기업 국내‧외 판로개척 및 마케팅 유공’ 포상 후보자 모집 공고<br /> <br /> <br /> 중소기업의 국내‧외 판로개척 및 매출확대 등에 기여한 중소기업 및 지원기관 임‧직원 등을 격려하기 위해 ‘중소기업 국내‧외 판로개척 및 마케팅 유공’ 포상 후보자를 아래와 같이 모집하오니 많은 신청 바랍니다.<br /> <br /> <br /> 2025년 6월 18일<br /> 중소벤처기업부 장관 <div data-hjsonver=\"1.0\" data-jsonlen=\"17461\" id=\"hwpEditorBoardContent\"> </div>"
+  },
+  {
+    "title": "2025년 중소벤처기업부 적극행정 모니터링단 모집 공고",
+    "date": "2025.06.18",
+    "content": "실제 국민 목소리를 주기적으로 청취‧반영할 수 있는 창구를 마련하여 중소벤처기업부의 적극행정 추진의 국민 체감도 제고를 목적으로 하는 적극행정 모니터링단을 다음과 같이 모집하오니 많은 관심과 참여를 부탁드립니다. <div data-hjsonver=\"1.0\" data-jsonlen=\"13924\" id=\"hwpEditorBoardContent\"> </div> ㅇ 모집기간 : 2025. 6. 18.(수) ~ 7. 4.(금)<br /> <br /> ㅇ 지원자격 : 중소·벤처기업 및 소상공인 정책에 관심 있는 누구나<br /> <br /> ㅇ 모집인원 : 25명 내외<br /> <br /> ㅇ 활동내용 <br /> - 중소벤처기업부 적극행정 경진대회 국민 심사위원 참여<br /> - 설문 · 온라인 투표 및 온 · 오프라인 활동<br /> - 개인 SNS를 통한 중소벤처기업부 적극행정 우수사례 홍보<br /> <br /> ㅇ 활동 기간 : 2025. 7 .21. ~ 12. 31.<br /> <br /> ㅇ 활동혜택 : 홍보활동 및 적극행정 관련 행사 참여시 소정의 활동비 지급(30만원)<br /> <br /> ㅇ 신청방법 <br /> - 1. 신청서식과 2. 개인정보수집동의서를 작성하여 담당자 메일로 제출<br /> - 2. 담당자 메일 : 임종영 주무관 (bellyoung80@korea.kr)<br /> <br /> ㅇ 문의 : 혁신행정담당관실 임종영 주무관 (bellyoung80@korea.kr 또는 044-204-7323)"
+  },
+  {
+    "title": "2025 공공구매 유공자 포상계획 공고",
+    "date": "2025.06.09",
+    "content": "중소벤처기업부 공고 제2025-360호<br /> <br /> 「중소기업제품 구매촉진 및 판로지원에 관한 법률」제21조제6항에 따른<br /> 2025년도 공공구매 유공자 포상계획을 다음과 같이 공고하오니 많은 참여와 추천 바랍니다.<br /> <br /> 2025년 6월 9일<br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "2025년 제30회 중소벤처기업 금융지원상 공고",
+    "date": "2025.05.30",
+    "content": "<br /> 중소벤처기업 금융지원 활성화에 기여한 금융기관 임직원의 사기를 진작하고 중소벤처기업 금융 활성화를 도모하고자<br /> 붙임과 같이「제30회 중소벤처기업 금융지원상」포상계획을 공고하오니 많은 참여 바랍니다.<br /> <br /> 2025년 5월 30일 <br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "2025년 대중소기업 동반성장 유공 포상 후보자 모집 공고",
+    "date": "2025.05.30",
+    "content": "<br /> 대중소기업 상생협력 촉진에 관한 법률 제 16조에 따른 2025년도 대중소기업 동반성장 유공 포상 후보자를 첨부와 같이 모집하오니, 많은 신청 바랍니다."
+  },
+  {
+    "title": "자율기구 소상공인판매활력촉진단 업무성과 및 향후 계획",
+    "date": "2025.05.26",
+    "content": "2025년 정부조직관리지침에 따라 자율기구 소상공인판매활력촉진단 운영성과 및 항후계획을 첨부와 같이 공개합니다."
+  },
+  {
+    "title": "1인 창조기업 지원사업 전담기관 추가 지정 공지",
+    "date": "2025.05.13",
+    "content": "□ 1인 창조기업 육성에 관한 법률 제16조 및 동법 시행령 제9조에 근거,<br /> 1인 창조기업 지원사업 전담기관을 아래와 같이 추가 지정합니다.<br /> <br /> ○ 1인 창조기업 지원사업 전담기관 : 사단법인한국창업보육협회<br /> <br /> ○ 지정기간 : 2025년~2029년 (5년)"
+  },
+  {
+    "title": "2025년 중소기업 활력제고 및 규제혁신 유공 포상 후보자 모집 연장 공고",
+    "date": "2025.05.08",
+    "content": "<img alt=\"인포그래픽\" src=\"/ckeditor/fileDownload.do?file_name=250507_중기부 옴부즈만 중소기업 활력제고 및 규제혁신 유공 포상 후보자 모집 수정ver.7_2025050808300290.jpg\" style=\"width: 600px; height: 849px;\" /><br /> 자세한 사항은 첨부 공고문을 참조하시기 바랍니다."
+  },
+  {
+    "title": "2025년 대한민국 소상공인대회 포상계획 공고",
+    "date": "2025.05.01",
+    "content": "2024년 대한민국 소상공인대회 포상계획 공고하오니 많은 관심과 참여 바랍니다."
+  },
+  {
+    "title": "2024년도 중소기업제품 공공구매 실적 및 2025년 계획",
+    "date": "2025.04.29",
+    "content": "중소벤처기업부 공고 제2025-280호<br /> <br /> 「중소기업제품 구매촉진 및 판로지원에 관한 법률」제5조제3항 및 동법 시행령 제4조제4항의 규정에 따라<br /> 공공기관의 2024년도 중소기업제품 구매실적 및 2025년도 구매계획을 다음과 같이 공고합니다.<br /> <br /> 2025년 4월 29일<br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "2025년도 외국전문인력 비자(E-7-1) 고용추천 공고",
+    "date": "2025.04.22",
+    "content": "외국전문인력 비자(E-7-1) 고용추천 계획을 공고하오니 많은 참여 바람니다."
+  },
+  {
+    "title": "2025년도 숙련기능인력 비자(E-7-4) 전환추천 공고",
+    "date": "2025.04.22",
+    "content": "숙련기능인력 비자(E-7-4) 전환추천 계획을 공고하오니 많은 참여 바랍니다."
+  },
+  {
+    "title": "제재처분 사전통지에 대한 공시송달 공고",
+    "date": "2025.04.11",
+    "content": "<br /> K-스타트업 센터 사업 공공재정지급금 부정수급 기업에 대하여 「제재처분 사전통지」공문을 등기우편으로 발송하였으나 수취인불명 등의 사유로 반송됨에 따라 송달이 불가능하여 행정절차법 제14조 제4항에 따라 공시송달(공고)을 실시합니다. <div data-hjsonver=\"1.0\" data-jsonlen=\"8232\" id=\"hwpEditorBoardContent\"> </div>"
+  },
+  {
+    "title": "2025년 중소기업 활력제고 및 규제혁신 유공 포상 후보자 모집 공고",
+    "date": "2025.04.08",
+    "content": "「2025년 중소기업 활력제고 및 규제혁신 유공」포상 후보자 모집 공고입니다.<br /> 자세한 사항은 첨부 공고문을 참조하시기 바랍니다."
+  },
+  {
+    "title": "제11회 대한민국 공무원상 접수 안내",
+    "date": "2025.04.07",
+    "content": "「제11회 대한민국 공무원상」 후보자를 아래와 같이 국민 추천으로 접수하고자 합니다.<br /> <br /> ◆ 접수기간 : 2025.4.7 ~ 2025.5.14<br /> ◆ 추천대상 : 중소벤처기업부 전 직급 공무원 (정무직 등 제외)<br /> ◆ 추천분야 : 1.상식과 공정, 2.역동적 경제, 3.따뜻한 동행, 4.자율과 창의<br /> ◆ 추천방법 : (온라인) 중소벤처기업부 담당자 이메일 또는 인사혁신처 홈페이지 접수창구 / (우편) 중소벤처기업부 또는 인사혁신처 담당부서 우편 송부<br /> <br /> 자세한 내용은 첨부파일을 확인하시기 바랍니다.<br /> <br none=\"\" /> ◆ 관련문의<br /> ㅇ 중소벤처기업부 운영지원과 (044-204-7043)<br /> ㅇ 인사혁신처 적극행정과 (044-201-8299 / 8309)"
+  },
+  {
+    "title": "중소벤처기업부 누리집 점검 작업 안내(3.24(월) 20:00 ~ 3.25(화) 06:00)",
+    "date": "2025.03.21",
+    "content": "<br /> 중소벤처기업부 누리집 점검 작업 안내<br /> <br /> ○ 작업 : 중소벤처기업부 누리집 오프라인 점검 <br /> <br /> ○ 일시 : 2025년 3.24(월) 20:00 ~ 3.25(화) 06:00<br /> <br /> ○ 영향 : 중소벤처기업부 누리집 서비스 접속 일시 순단 지연 발생<br /> <br /> 중소벤처기업부 누리집 이용에 참조하시기 바랍니다. 감사합니다."
+  },
+  {
+    "title": "민간자격 등록폐지 공고",
+    "date": "2025.03.20",
+    "content": "「자격기본법」 제18조의3 제2항 및 제18조의4에 의거 등록폐지를 신고한 중소벤처기업부 소관 민간자격에 대하여 같은 법 시행령 제23조의5 제2항 및 제3항의 규정에 따라 아래와 같이 공고합니다. <div data-hjsonver=\"1.0\" data-jsonlen=\"8109\" id=\"hwpEditorBoardContent\"> </div>"
+  },
+  {
+    "title": "수출지원기반활용사업 제재처분 사전통지에 대한 공시송달 공고",
+    "date": "2025.03.11",
+    "content": "<br /> 수출지원기반활용사업(수출바우처) 보조금 부정수급 기업 등에 대하여 「제재처분 사전통지」공문을 등기우편으로 발송하였으나 폐문부재 등의 사유로 반송됨에 따라 송달이 불가능하여 행정절차법 제 14조 제4항에 따라 공시송달(공고)을 실시합니다."
+  },
+  {
+    "title": "2025 대한민국 중소기업인대회 유공 포상 추천대상자 공개검증",
+    "date": "2025.03.10",
+    "content": "<p>ㅇ 2025년 대한민국 중소기업인대회와 관련하여 혁신성장과 일자리 창출의 주역으로서 중소기업 육성․발전에 공로가 있는 중소기업인 등을 발굴·포상하여 중소기업 인식개선 및 사기 진작을 위한 정부 포상 추천 후보자에 대한 의견수렴을 위해 포상추천 후보자(예비 포함)의 주요공적을 공개합니다.</p> <p> </p> <p>ㅇ 의견이 있으신 경우 <b>’25.3.25(화)까지</b> <b>중소벤처기업부 대외환경대응과</b>(044-204-7449, 7432, moku77@korea.kr)와 <b>중소기업중앙회 포상전담팀</b>(02-2124-3094, 4093, posang@kbiz.or.kr)으로 연락주시기 바랍니다.</p> <p> </p> <p>ㅇ 주신 의견에 대해 별도의 회신은 하지 않으며 공적심사 자료로 활용할 예정입니다.</p> <p><br /> <br /> <b>[※참고사항]</b></p> <p> ㅇ 추천기관 : 중소벤처기업부 </p> <p> ㅇ 수여예정일 : 2025년 5월 중 예정</p> <p> ㅇ 포상규모(안) : 산업훈장, 산업포장, 대통령표창, 국무총리표창 </p> <p> * 포상 규모는 미정이며 부처간 협의중에 있음(’24년 포상규모는 92점) </p>"
+  },
+  {
+    "title": "2025년 중소기업 혁신 유공 포상 후보자 모집 공고",
+    "date": "2025.03.05",
+    "content": "중소기업 혁신 유공 포상 후보자를 붙임과 같이 모집하오니, 혁신적인 기업 및 관심 있는 국민 여러분의 많은 신청 바랍니다."
+  },
+  {
+    "title": "수출지원기반활용사업 제재처분 사전통지에 대한 공시송달 공고",
+    "date": "2025.03.04",
+    "content": "수출지원기반활용사업(수출바우처) 보조금 부정수급 기업 등에 대하여 제재처분 사전통지 공문을 등기우편으로 발송하였으나 폐문부재 등의 사유로 반송됨에 따라 송달이 불가능하여 행정절차법 제14조 제4항에 따라 공시송달(공고)을 실시합니다."
+  },
+  {
+    "title": "지역상권법 제32조에 따른 전문지원기관 지정 알림",
+    "date": "2025.02.26",
+    "content": "지역상권 상생 및 활성화에 관한 법률 제32조 및 같은법 시행령 제27조에 따라 아래의 기관을 전문지원기관으로 지정하였음을 알립니다.<br /> <br /> * 지역상권법에 따른 전문지원기관 : 소상공인시장진흥공단"
+  },
+  {
+    "title": "2025년 여성기업주간 여성기업 유공자포상 접수기간 연장공고",
+    "date": "2025.02.14",
+    "content": "2025년 여성기업 주간 유공 후보자 모집을<br /> 연장공고하오니 많은 신청바랍니다."
+  },
+  {
+    "title": "성능인증 취소 처분 사전통지 및 청문 참석 공시송달",
+    "date": "2025.02.12",
+    "content": "다음 당사자는 「중소기업제품 구매촉진 및 판로지원에 관한 법률」제15조 및 제17조, 「중소기업기술개발제품 우선구매제도 운영 등에 관한 시행세칙」제25조의 규정에 의한 성능인증 취소처분의 예정자로서 '성능인증 취소 처분 사전통지 및 청문 참석 요청'문서를 우편 송달하였으나, '이사감'의 사유로 반송되어 행정절차법 제14조의 규정에 따라 다음과 같이 공시송달하오니 공시송달문을 참조하여 주시기 바랍니다.<br /> <br /> 2025년 2월<br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "2024년 민원서비스 종합평가 결과 알림",
+    "date": "2025.02.10",
+    "content": "<h2><strong>[2024년 민원서비스 종합평가 결과]</strong></h2> <h2><br /> □ 평가등급 : 다 (보통)</h2> <h2><br /> □ 주요 항목별 등급</h2> <table style=\"width: 860px;\"> <tbody> <tr> <td rowspan=\"2\">평가항목</td> <td rowspan=\"2\">기관<br /> 종합등급</td> <td>민원행정 관리기반</td> <td colspan=\"3\">민원행정 활동</td> <td>민원처리 성과</td> </tr> <tr> <td>민원행정 전략 및 체계</td> <td>민원제도운영</td> <td>국민신문고민원 처리</td> <td> </td> <td>민원만족도</td> </tr> <tr> <td>평가등급</td> <td>다 (보통)</td> <td>라 (미흡)</td> <td>다 (보통)</td> <td>다 (보통)</td> <td> </td> <td>나 (우수)</td> </tr> </tbody> </table> <h2><br /> □ 관련근거 : 민원 처리에 관한 법률 시행령 제50조(평가)</h2>"
+  },
+  {
+    "title": "성능인증 취소 처분 사전통지 및 청문 참석 공시송달",
+    "date": "2025.01.22",
+    "content": "다음 당사자는 「중소기업제품 구매촉진 및 판로지원에 관한 법률」제15조 및 제17조, 「중소기업기술개발제품 우선구매제도 운영 등에 관한 시행세칙」제25조의 규정에 의한 성능인증 취소처분의 예정자로서 '성능인증 취소 처분 사전통지 및 청문 참석 요청'문서를 우편 송달하였으나, '이사감'의 사유로 반송되어 행정절차법 제14조의 규정에 따라 다음과 같이 공시송달하오니 공시송달문을 참조하여 주시기 바랍니다.<br /> <br /> 2025년 1월<br /> 중소벤처기업부장관"
+  },
+  {
+    "title": "2025년 여성기업 주간 여성기업 유공자 포상 모집 공고",
+    "date": "2025.01.20",
+    "content": "2025년 여성기업 주간 행사에서 수여할 예정인 여성기업 유공자 포상 공고를 붙임과 같이 게시합니다.<br /> <br />"
+  },
+  {
+    "title": "중소기업 탄소중립 설비투자 지원사업 수탁기관 선정결과 발표",
+    "date": "2025.01.15",
+    "content": "공고번호 제2024-596호(중소기업 탄소중립 설비투자 지원사업 수탁기관 모집공고)와 관련하여, 선정평가 및 민간위탁운영위원회의 심의를 거쳐 수탁기관이 선정되었음을 공지합니다.<br /> <br /> - 선정 결과 -<br /> 수탁기관: 중소벤처기업진흥공단 <br /> 위탁사무: '중소기업 탄소중립 설비투자 지원' 사업의 수행 및 운영관리 <br /> 위탁기간: 계약 체결일 ~ 27.12.31.<br /> <br /> 끝."
+  },
+  {
+    "title": "자율기구 소상공인판매활력촉진단 운영 계획",
+    "date": "2025.01.07",
+    "content": "<br /> 2024년 정부조직관리지침에 따라 자율기구 운영계획을 첨부와 같이 공개합니다."
+  },
+  {
+    "title": "자율기구 미래기술대응지원단 운영 계획",
+    "date": "2025.01.07",
+    "content": "2024년 정부조직관리지침에 따라 자율기구 운영계획을 첨부와 같이 공개합니다."
+  }
+]
+</script>
+  <script>
+    // 날짜 유틸
+    function formatDate(date) {
+      return date.toISOString().slice(0, 10);
+    }
+    function parseDate(str) {
+      return new Date(str);
+    }
+    // 기간 버튼 클릭 시 날짜 자동 입력
+    document.querySelectorAll('.period-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const days = parseInt(btn.dataset.days);
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - days + 1);
+        document.getElementById('startDate').value = formatDate(start);
+        document.getElementById('endDate').value = formatDate(end);
+      });
+    });
+    // 오늘이 기본값
+    window.addEventListener('DOMContentLoaded', () => {
+      const end = new Date();
+      const start = new Date();
+      start.setDate(end.getDate() - 6);
+      document.getElementById('startDate').value = formatDate(start);
+      document.getElementById('endDate').value = formatDate(end);
+      loadNotices();
+    });
+    // 폼 제출 시 필터링
+    document.getElementById('periodForm').addEventListener('submit', e => {
+      e.preventDefault();
+      loadNotices();
+    });
+    // notices-data에서 데이터 읽기
+    function getNoticesData() {
+      const el = document.getElementById('notices-data');
+      return JSON.parse(el.textContent);
+    }
+    // notices.json 불러와서 필터링 후 표로 출력
+    function loadNotices() {
+      const loading = document.getElementById('loading');
+      const error = document.getElementById('error');
+      const result = document.getElementById('result');
+      loading.classList.remove('hidden');
+      error.classList.add('hidden');
+      result.innerHTML = '';
+      try {
+        const data = getNoticesData();
+        // 기간 필터
+        const start = parseDate(document.getElementById('startDate').value);
+        const end = parseDate(document.getElementById('endDate').value);
+        const filtered = data.filter(item => {
+          const d = parseDate(item.date.replace(/\./g, '-'));
+          return d >= start && d <= end;
+        });
+        if (filtered.length === 0) {
+          result.innerHTML = '<div class="text-center text-gray-500 py-8">해당 기간에 게시글이 없습니다.</div>';
+        } else {
+          result.innerHTML = renderTable(filtered);
+          bindAccordion();
+        }
+      } catch (err) {
+        error.textContent = '조회 실패: ' + err.message;
+        error.classList.remove('hidden');
+      } finally {
+        loading.classList.add('hidden');
+      }
+    }
+    // 표 렌더링
+    function renderTable(data) {
+      let html = `<div class="overflow-x-auto"><table class="min-w-full bg-white border rounded shadow"><thead><tr class="bg-blue-100 text-blue-800 text-sm"><th class="px-3 py-2 border">No</th><th class="px-3 py-2 border">제목</th><th class="px-3 py-2 border">등록일자</th></tr></thead><tbody>`;
+      data.forEach((item, idx) => {
+        html += `<tr class="border-b hover:bg-blue-50 cursor-pointer accordion-title" data-idx="${idx}">
+          <td class="px-3 py-2 border text-center">${idx + 1}</td>
+          <td class="px-3 py-2 border text-left text-blue-700 underline">${item.title}</td>
+          <td class="px-3 py-2 border text-center">${item.date}</td>
+        </tr>
+        <tr class="accordion-content hidden" data-idx="${idx}">
+          <td colspan="3" class="px-3 py-4 bg-gray-50 text-gray-700 whitespace-pre-line">
+            ${item.content}
+          </td>
+        </tr>`;
+      });
+      html += '</tbody></table></div>';
+      return html;
+    }
+    // 아코디언 바인딩 (단일 열림)
+    function bindAccordion() {
+      const titles = document.querySelectorAll('.accordion-title');
+      titles.forEach(title => {
+        title.addEventListener('click', () => {
+          const idx = title.dataset.idx;
+          document.querySelectorAll('.accordion-content').forEach(row => {
+            if (row.dataset.idx === idx) {
+              row.classList.toggle('hidden');
+            } else {
+              row.classList.add('hidden');
+            }
+          });
+        });
+      });
+    }
+  </script>
+</body>
+</html> 
